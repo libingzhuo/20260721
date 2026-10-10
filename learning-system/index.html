@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>学习轨迹 · Case</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="mark">L</span><span><strong>学习轨迹</strong><small>CASE LEARNING</small></span></div>
+    <div class="header-right"><span class="live-dot"></span><div id="saveState" class="status">等待开始学习</div></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow"><span></span>专注学习工作台</p>
+        <h1>学习有进度，<em>成长有记录。</em></h1>
+        <p>看视频、记时间、提炼知识，再把每一次进步同步到 Case。</p>
+      </div>
+      <div class="metric"><small>本次有效学习</small><span id="effectiveTime">00:00:00</span><div class="metric-line"><i></i></div></div>
+    </section>
+
+    <div class="layout">
+      <section class="card player-card">
+        <div class="card-title"><div><b>01</b><h2>学习播放器</h2></div><span id="trackingBadge" class="pill">未播放</span></div>
+        <div class="video-shell"><video id="video" controls playsinline></video><span class="video-corner">FOCUS MODE</span></div>
+        <div class="source-row">
+          <label class="file-button">选择视频 / Case附件<input id="videoFile" type="file" accept="video/*"></label>
+          <span>或</span>
+          <input id="videoUrl" placeholder="粘贴 MP4 / WebM 直链">
+          <button id="loadUrl" class="secondary">载入</button>
+        </div>
+        <div id="dropZone" class="drop-zone">也可以把从 Case 下载的视频附件拖到这里</div>
+        <input id="lessonTitle" class="wide" placeholder="课程名称，例如：仓储安全操作基础">
+        <div class="progress-line"><i id="progressBar"></i></div>
+        <div class="player-meta"><span id="positionText">00:00 / 00:00</span><span id="focusText">等待开始</span></div>
+      </section>
+
+      <aside class="card case-card">
+        <div class="card-title"><div><b>02</b><h2>连接 Case</h2></div><span id="caseBadge" class="pill muted">未连接</span></div>
+        <label>登录账号<input id="account" autocomplete="username" placeholder="Case 账号"></label>
+        <label>登录密码<input id="password" type="password" autocomplete="current-password" placeholder="仅保存在当前页面内存"></label>
+        <label>Case 编号<input id="caseIndex" inputmode="numeric" placeholder="例如 427886"></label>
+        <button id="connectCase">验证并连接</button>
+        <p id="caseTitle" class="case-title">连接后，学习阶段记录将写入该 Case 评论。</p>
+        <div id="caseUrls" class="case-urls">
+          <label>Case 中的学习网址<select id="caseUrlSelect"><option value="">请先验证并连接 Case</option></select></label>
+          <div class="url-actions">
+            <button id="loadCaseUrl" class="secondary" disabled>载入播放器</button>
+            <button id="openCaseUrl" class="secondary" disabled>打开原网页</button>
+          </div>
+          <p id="urlHint" class="privacy">连接后，系统会读取 Case 概述和评论中的网址。</p>
+        </div>
+        <div class="divider"></div>
+        <label>自动同步间隔
+          <select id="syncMinutes"><option value="5">每 5 分钟</option><option value="10" selected>每 10 分钟</option><option value="15">每 15 分钟</option><option value="0">关闭自动同步</option></select>
+        </label>
+        <button id="syncNow" class="secondary" disabled>立即同步学习记录</button>
+        <p class="privacy">账号和密码不写入本地存储；关闭页面后即清除。</p>
+      </aside>
+
+      <section class="card content-card">
+        <div class="card-title"><div><b>03</b><h2>字幕与讲义</h2></div><span class="pill muted">按进度分析</span></div>
+        <textarea id="transcript" placeholder="粘贴视频字幕、课程讲义或学习材料。系统会按当前视频进度推算已学习范围，并据此生成摘要和试题。"></textarea>
+        <button id="analyze">生成阶段摘要与试题</button>
+      </section>
+
+      <section class="card result-card">
+        <div class="card-title"><div><b>04</b><h2>学习成果</h2></div><span id="coverage" class="pill muted">尚未生成</span></div>
+        <div id="emptyResult" class="empty">播放视频并填写学习材料后，这里会出现阶段摘要和练习题。</div>
+        <div id="results" hidden>
+          <h3>阶段摘要</h3><ul id="summaryList"></ul>
+          <h3>关键词</h3><div id="keywordList" class="keywords"></div>
+          <h3>随堂练习</h3><div id="quizList"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
+
