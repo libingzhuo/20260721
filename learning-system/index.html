@@ -27,7 +27,7 @@
         <div class="card-title"><div><b>01</b><h2>学习播放器</h2></div><span id="trackingBadge" class="pill">未播放</span></div>
         <div class="video-shell"><video id="video" controls playsinline></video><span class="video-corner">FOCUS MODE</span></div>
         <div class="source-row">
-          <label class="file-button">选择视频 / Case附件<input id="videoFile" type="file" accept="video/*"></label>
+          <label class="file-button">选择视频 / Case附件<input id="videoFile" type="file" accept="video/*,.mkv,.avi,.wmv,.flv,.mov,.m4v,.3gp"></label>
           <span>或</span>
           <input id="videoUrl" placeholder="粘贴 MP4 / WebM 直链">
           <button id="loadUrl" class="secondary">载入</button>
@@ -75,6 +75,11 @@
           <h3>关键词</h3><div id="keywordList" class="keywords"></div>
           <h3>随堂练习</h3><div id="quizList"></div>
         </div>
+      </section>
+
+      <section class="card log-card">
+        <div class="card-title"><div><b>05</b><h2>运行与登录日志</h2></div><button id="clearLog" class="secondary">清空</button></div>
+        <div id="sessionLog" class="session-log"><div><time>等待操作</time><span>系统已就绪，账号密码不会写入日志。</span></div></div>
       </section>
     </div>
   </main>
