@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>学习轨迹 · Case</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&display=swap');
+:root{--bg:#f3f5f2;--paper:#fff;--ink:#13211b;--muted:#6d7972;--line:#e2e8e3;--green:#126b4c;--green2:#1c8963;--mint:#dff6e9;--lime:#c9f06a;--night:#101915;--shadow:0 18px 55px rgba(30,55,43,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 82% 3%,rgba(201,240,106,.25),transparent 25%),linear-gradient(180deg,#f8faf7 0,var(--bg) 42%);font-family:'Noto Sans SC','Microsoft YaHei UI',sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.32;background-image:linear-gradient(rgba(18,107,76,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(18,107,76,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 70%)}
+header{height:74px;padding:0 max(28px,calc((100vw - 1240px)/2));display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(18,33,27,.07);background:rgba(248,250,247,.78);position:sticky;top:0;z-index:10;backdrop-filter:blur(18px)}.brand{display:flex;align-items:center;gap:12px}.brand>span:last-child{display:flex;flex-direction:column}.brand strong{font-size:16px}.brand small{font:600 8px/1.2 'Space Grotesk',sans-serif;letter-spacing:.18em;color:var(--muted);margin-top:3px}.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,var(--green2),var(--green));color:white;font:600 19px 'Space Grotesk';box-shadow:0 8px 18px rgba(18,107,76,.22)}.header-right{display:flex;align-items:center;gap:8px}.live-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(201,240,106,.18)}.status{font-size:12px;color:var(--muted)}
+main{position:relative;max-width:1240px;margin:auto;padding:54px 28px 90px}.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:34px}.eyebrow{display:flex;align-items:center;gap:8px;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.13em;margin:0 0 15px}.eyebrow span{width:24px;height:2px;background:var(--green)}.hero h1{font-size:clamp(38px,5vw,66px);line-height:1.08;letter-spacing:-.055em;margin:0}.hero h1 em{font-style:normal;color:var(--green)}.hero p:not(.eyebrow){font-size:15px;color:var(--muted);margin:17px 0 0}.metric{min-width:280px;background:var(--night);color:white;padding:22px 24px;border-radius:20px;box-shadow:0 18px 36px rgba(16,25,21,.18)}.metric small{display:block;color:#9eaea6;font-size:11px;letter-spacing:.1em;margin-bottom:8px}.metric span{display:block;font:600 38px/1 'Space Grotesk',ui-monospace}.metric-line{height:3px;background:#2b3731;margin-top:17px;border-radius:2px;overflow:hidden}.metric-line i{display:block;width:42%;height:100%;background:linear-gradient(90deg,var(--lime),#80e4b4)}
+.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.85fr);gap:20px;align-items:start}.card{background:rgba(255,255,255,.92);border:1px solid rgba(209,219,212,.84);border-radius:24px;padding:24px;box-shadow:var(--shadow);backdrop-filter:blur(8px)}.card-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.card-title>div{display:flex;align-items:center;gap:10px}.card-title b{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:var(--mint);color:var(--green);font:600 11px 'Space Grotesk'}.card-title h2{font-size:15px;margin:0}.pill{font-size:10px;font-weight:700;padding:7px 10px;border-radius:100px;background:var(--lime);color:#263713}.pill.muted{background:#edf1ee;color:var(--muted)}
+.video-shell{position:relative;border-radius:17px;overflow:hidden;background:var(--night)}video{width:100%;aspect-ratio:16/9;background:radial-gradient(circle at center,#243129,#101915 65%);display:block}.video-corner{position:absolute;left:14px;top:14px;color:rgba(255,255,255,.48);font:600 8px 'Space Grotesk';letter-spacing:.16em;pointer-events:none}.source-row{display:flex;align-items:center;gap:9px;margin-top:15px}.source-row>span{font-size:11px;color:#a2aaa5}.source-row input{flex:1}.wide{margin-top:10px}
+input,textarea,select{width:100%;border:1px solid var(--line);border-radius:11px;background:#fbfcfb;padding:11px 12px;font:13px inherit;color:var(--ink);outline:none;transition:.18s}input::placeholder,textarea::placeholder{color:#a0aaa3}input:focus,textarea:focus,select:focus{border-color:#75b89d;background:white;box-shadow:0 0 0 4px rgba(18,107,76,.07)}.file-button,button{border:0;border-radius:11px;background:linear-gradient(135deg,var(--green2),var(--green));color:white;padding:11px 15px;font:700 12px inherit;cursor:pointer;white-space:nowrap;box-shadow:0 7px 16px rgba(18,107,76,.13);transition:.16s}.file-button:hover,button:hover:not(:disabled){transform:translateY(-1px)}.file-button input{display:none}button.secondary{background:#eff4f0;color:var(--ink);box-shadow:none}button:disabled{opacity:.42;cursor:not-allowed;box-shadow:none}.progress-line{height:5px;background:#edf0ed;margin:17px 0 10px;border-radius:5px;overflow:hidden}.progress-line i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--lime));border-radius:5px}.player-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+.case-card{position:sticky;top:94px}.case-card label{display:block;font-size:11px;font-weight:600;color:var(--muted);margin:13px 0}.case-card label input,.case-card label select{margin-top:7px}.case-card>button{width:100%;margin-top:2px}.case-title,.privacy{font-size:11px;line-height:1.65;color:var(--muted)}.case-title{background:#f3f7f4;border-radius:10px;padding:10px 12px}.case-urls{border-top:1px dashed var(--line);margin-top:14px;padding-top:2px}.url-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.divider{border-top:1px solid var(--line);margin:18px 0}
+.content-card textarea{height:190px;resize:vertical;line-height:1.7}.content-card button{margin-top:12px}.result-card{min-height:290px}.empty{display:grid;place-items:center;text-align:center;color:#9aa39d;min-height:205px;padding:0 12%;line-height:1.8}.result-card h3{font-size:12px;color:var(--green);letter-spacing:.05em;margin:20px 0 10px}.result-card li{margin:8px 0;line-height:1.65;font-size:13px}.keywords{display:flex;gap:7px;flex-wrap:wrap}.keywords span{font-size:11px;background:var(--mint);color:var(--green);padding:7px 10px;border-radius:8px}.quiz{border-top:1px solid var(--line);padding:13px 0}.quiz p{margin:0 0 7px;line-height:1.65;font-size:13px}.answer{font-size:11px;color:var(--green);font-weight:600}#toast{position:fixed;right:28px;bottom:28px;max-width:360px;background:var(--night);color:white;padding:14px 18px;border-radius:13px;opacity:0;transform:translateY(12px);transition:.22s;pointer-events:none;font-size:12px;box-shadow:0 15px 40px rgba(16,25,21,.24);z-index:20}#toast.show{opacity:1;transform:none}
+.drop-zone{margin-top:10px;padding:10px;border:1px dashed #cdd8d0;border-radius:10px;text-align:center;font-size:11px;color:var(--muted);background:#f8faf8;transition:.16s}.drop-zone.over{border-color:var(--green);background:var(--mint);color:var(--green)}@media(max-width:860px){header{padding:0 20px}main{padding:36px 18px 70px}.hero{display:block}.metric{margin-top:28px;min-width:0;max-width:360px}.layout{grid-template-columns:1fr}.case-card{position:static}.source-row{flex-wrap:wrap}.source-row input{min-width:190px}.hero h1{font-size:42px}}@media(max-width:480px){.hero h1{font-size:35px}.metric span{font-size:32px}.card{padding:18px;border-radius:20px}.header-right{display:none}.url-actions{grid-template-columns:1fr}.source-row .secondary{width:100%}}
+
+.standalone-note{position:fixed;left:18px;bottom:14px;font-size:10px;color:#77837b;background:#ffffffd9;padding:7px 10px;border:1px solid #e2e8e3;border-radius:8px;backdrop-filter:blur(8px);z-index:8}</style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="mark">L</span><span><strong>学习轨迹</strong><small>CASE LEARNING</small></span></div>
+    <div class="header-right"><span class="live-dot"></span><div id="saveState" class="status">等待开始学习</div></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow"><span></span>专注学习工作台</p>
+        <h1>学习有进度，<em>成长有记录。</em></h1>
+        <p>看视频、记时间、提炼知识，再把每一次进步同步到 Case。</p>
+      </div>
+      <div class="metric"><small>本次有效学习</small><span id="effectiveTime">00:00:00</span><div class="metric-line"><i></i></div></div>
+    </section>
+
+    <div class="layout">
+      <section class="card player-card">
+        <div class="card-title"><div><b>01</b><h2>学习播放器</h2></div><span id="trackingBadge" class="pill">未播放</span></div>
+        <div class="video-shell"><video id="video" controls playsinline></video><span class="video-corner">FOCUS MODE</span></div>
+        <div class="source-row">
+          <label class="file-button">选择视频 / Case附件<input id="videoFile" type="file" accept="video/*"></label>
+          <span>或</span>
+          <input id="videoUrl" placeholder="粘贴 MP4 / WebM 直链">
+          <button id="loadUrl" class="secondary">载入</button>
+        </div>
+        <div id="dropZone" class="drop-zone">也可以把从 Case 下载的视频附件拖到这里</div>
+        <input id="lessonTitle" class="wide" placeholder="课程名称，例如：仓储安全操作基础">
+        <div class="progress-line"><i id="progressBar"></i></div>
+        <div class="player-meta"><span id="positionText">00:00 / 00:00</span><span id="focusText">等待开始</span></div>
+      </section>
+
+      <aside class="card case-card">
+        <div class="card-title"><div><b>02</b><h2>连接 Case</h2></div><span id="caseBadge" class="pill muted">未连接</span></div>
+        <label>登录账号<input id="account" autocomplete="username" placeholder="Case 账号"></label>
+        <label>登录密码<input id="password" type="password" autocomplete="current-password" placeholder="仅保存在当前页面内存"></label>
+        <label>Case 编号<input id="caseIndex" inputmode="numeric" placeholder="例如 427886"></label>
+        <button id="connectCase">验证并连接</button>
+        <p id="caseTitle" class="case-title">连接后，学习阶段记录将写入该 Case 评论。</p>
+        <div id="caseUrls" class="case-urls">
+          <label>Case 中的学习网址<select id="caseUrlSelect"><option value="">请先验证并连接 Case</option></select></label>
+          <div class="url-actions">
+            <button id="loadCaseUrl" class="secondary" disabled>载入播放器</button>
+            <button id="openCaseUrl" class="secondary" disabled>打开原网页</button>
+          </div>
+          <p id="urlHint" class="privacy">连接后，系统会读取 Case 概述和评论中的网址。</p>
+        </div>
+        <div class="divider"></div>
+        <label>自动同步间隔
+          <select id="syncMinutes"><option value="5">每 5 分钟</option><option value="10" selected>每 10 分钟</option><option value="15">每 15 分钟</option><option value="0">关闭自动同步</option></select>
+        </label>
+        <button id="syncNow" class="secondary" disabled>立即同步学习记录</button>
+        <p class="privacy">账号和密码不写入本地存储；关闭页面后即清除。</p>
+      </aside>
+
+      <section class="card content-card">
+        <div class="card-title"><div><b>03</b><h2>字幕与讲义</h2></div><span class="pill muted">按进度分析</span></div>
+        <textarea id="transcript" placeholder="粘贴视频字幕、课程讲义或学习材料。系统会按当前视频进度推算已学习范围，并据此生成摘要和试题。"></textarea>
+        <button id="analyze">生成阶段摘要与试题</button>
+      </section>
+
+      <section class="card result-card">
+        <div class="card-title"><div><b>04</b><h2>学习成果</h2></div><span id="coverage" class="pill muted">尚未生成</span></div>
+        <div id="emptyResult" class="empty">播放视频并填写学习材料后，这里会出现阶段摘要和练习题。</div>
+        <div id="results" hidden>
+          <h3>阶段摘要</h3><ul id="summaryList"></ul>
+          <h3>关键词</h3><div id="keywordList" class="keywords"></div>
+          <h3>随堂练习</h3><div id="quizList"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div id="toast" role="status"></div>
+  <script>
+const $ = (id) => document.getElementById(id);
+const video = $('video');
+let sessionSeconds = 0, totalSeconds = 0, lastTick = performance.now(), lastSaved = 0;
+let connectedCase = null, lastSyncSeconds = 0, syncBusy = false, pauseTimer = null, analysis = null;
+let sourceKey = 'lesson:unset';
+
+const fmt = (seconds) => {
+  seconds = Math.max(0, Math.floor(Number(seconds) || 0));
+  const h = Math.floor(seconds / 3600), m = Math.floor(seconds % 3600 / 60), s = seconds % 60;
+  return h ? [h,m,s].map(x=>String(x).padStart(2,'0')).join(':') : [m,s].map(x=>String(x).padStart(2,'0')).join(':');
+};
+const fmtLong = (seconds) => `${Math.floor(seconds/3600)}小时${Math.floor(seconds%3600/60)}分${Math.floor(seconds%60)}秒`;
+const toast = (message, bad=false) => { const el=$('toast'); el.textContent=message; el.style.background=bad?'#8a2d24':''; el.classList.add('show'); clearTimeout(el.t); el.t=setTimeout(()=>el.classList.remove('show'),3200); };
+const isActive = () => !video.paused && !video.ended && document.visibilityState === 'visible' && document.hasFocus();
+const ratio = () => Number.isFinite(video.duration) && video.duration > 0 ? Math.min(1, video.currentTime/video.duration) : 1;
+
+function storageKey(){ return 'case-learning-v1:' + sourceKey; }
+function saveState(){
+  const state={position:video.currentTime||0,totalSeconds,lessonTitle:$('lessonTitle').value,transcript:$('transcript').value,lastSyncSeconds,updatedAt:new Date().toISOString()};
+  localStorage.setItem(storageKey(),JSON.stringify(state)); $('saveState').textContent='已自动保存'; lastSaved=performance.now();
+}
+function restoreState(){
+  const raw=localStorage.getItem(storageKey()); if(!raw) return;
+  try { const s=JSON.parse(raw); totalSeconds=Number(s.totalSeconds)||0; lastSyncSeconds=Number(s.lastSyncSeconds)||0; $('lessonTitle').value=s.lessonTitle||''; $('transcript').value=s.transcript||'';
+    video.addEventListener('loadedmetadata',()=>{ if(s.position<video.duration) video.currentTime=s.position; },{once:true}); toast(`已恢复上次进度 ${fmt(s.position)}`); } catch(_){}
+}
+function loadSource(src,key){ video.pause(); video.src=src; sourceKey=key; sessionSeconds=0; totalSeconds=0; lastSyncSeconds=0; analysis=null; restoreState(); video.load(); }
+
+async function isHevc(file){const scan=async blob=>{const bytes=new Uint8Array(await blob.arrayBuffer());let s='';for(let i=0;i<bytes.length;i++)s+=String.fromCharCode(bytes[i]);return s.includes('hvc1')||s.includes('hev1')};const size=Math.min(file.size,4*1024*1024);return await scan(file.slice(0,size))||(file.size>size&&await scan(file.slice(-size)));}
+async function prepareVideoFile(f){
+  if(!$('lessonTitle').value)$('lessonTitle').value=f.name.replace(/\.[^.]+$/,'');
+  if(!await isHevc(f)){loadSource(URL.createObjectURL(f),`file:${f.name}:${f.size}:${f.lastModified}`);return;}
+  toast('检测到 H.265 视频，正在转换为网页兼容的 H.264…');$('trackingBadge').textContent='正在转换';
+  try{const base=location.protocol==='file:'?'http://127.0.0.1:8765':'';const r=await fetch(base+'/api/media/convert',{method:'POST',headers:{'Content-Type':'application/octet-stream'},body:f});if(!r.ok){let d=await r.json().catch(()=>({}));throw Error(d.error||'转换失败')}const blob=await r.blob();loadSource(URL.createObjectURL(blob),`h264:${f.name}:${f.size}:${f.lastModified}`);$('trackingBadge').textContent='转换完成';toast('H.265 已转换为 H.264，可以正常播放');}catch(e){$('trackingBadge').textContent='格式不兼容';toast(location.protocol==='file:'?'该视频是 H.265；请先运行 start.ps1，再重新选择附件进行自动转换':e.message,true);}
+}
+$('videoFile').addEventListener('change',e=>{const f=e.target.files[0];if(f)prepareVideoFile(f);});
+const dropZone=$('dropZone');
+['dragenter','dragover'].forEach(name=>dropZone.addEventListener(name,e=>{e.preventDefault();dropZone.classList.add('over');}));
+['dragleave','drop'].forEach(name=>dropZone.addEventListener(name,e=>{e.preventDefault();dropZone.classList.remove('over');}));
+dropZone.addEventListener('drop',e=>{const f=[...e.dataTransfer.files].find(x=>x.type.startsWith('video/'));if(!f)return toast('请拖入视频格式的 Case 附件',true);prepareVideoFile(f);});
+$('loadUrl').onclick=()=>{ const u=$('videoUrl').value.trim(); if(!/^https?:\/\//i.test(u))return toast('请输入有效的 http/https 视频直链',true); loadSource(u,`url:${u}`); };
+
+video.addEventListener('timeupdate',()=>{ $('positionText').textContent=`${fmt(video.currentTime)} / ${fmt(video.duration)}`; $('progressBar').style.width=`${ratio()*100}%`; });
+video.addEventListener('play',()=>{ clearTimeout(pauseTimer); $('trackingBadge').textContent='正在计时'; $('trackingBadge').classList.remove('muted'); });
+video.addEventListener('pause',()=>{ $('trackingBadge').textContent='已暂停'; pauseTimer=setTimeout(()=>{ if(sessionSeconds>lastSyncSeconds) autoSync('暂停超过30秒'); },30000); saveState(); });
+video.addEventListener('ended',()=>autoSync('本次视频播放完成'));
+document.addEventListener('visibilitychange',()=>{ if(document.hidden) saveState(); });
+
+setInterval(()=>{
+  const now=performance.now(), delta=Math.min(2,(now-lastTick)/1000); lastTick=now;
+  if(isActive()){ sessionSeconds+=delta; totalSeconds+=delta; $('focusText').textContent='页面在前台 · 有效计时中'; }
+  else $('focusText').textContent=video.paused?'视频已暂停':'页面不在前台 · 暂停计时';
+  $('effectiveTime').textContent=fmt(totalSeconds).padStart(8,'0');
+  if(now-lastSaved>15000)saveState();
+  const mins=Number($('syncMinutes').value); if(mins&&totalSeconds-lastSyncSeconds>=mins*60)autoSync(`已累计学习${mins}分钟`);
+},1000);
+
+function localAnalyze(text,learnedRatio){const all=text.split(/[。！？；\n]+/).map(x=>x.trim()).filter(x=>x.length>=6);if(!all.length)throw Error('请先粘贴至少一段字幕或讲义文本');const n=Math.max(1,Math.round(all.length*Math.max(.01,Math.min(1,learnedRatio)))),learned=all.slice(0,n),keys=[];learned.forEach(x=>x.split(/需要|必须|应当|应该|可以|包括|通过|以及|并且|同时/).forEach(y=>{y=y.trim();if(y.length>=2&&y.length<=10&&!keys.includes(y))keys.push(y)}));const summary=learned.slice(0,5),quiz=summary.map((x,i)=>({type:'简答题',question:`请复述第 ${i+1} 个学习要点。`,answer:x}));return{ok:true,summary,keywords:keys.slice(0,8),quiz,coveredSentences:n,totalSentences:all.length};}
+async function api(path,body){const cloud=location.hostname.endsWith('github.io');if(cloud&&path==='/api/analyze')return localAnalyze(body.text,body.learnedRatio);if(cloud&&path.startsWith('/api/case/'))throw Error('GitHub Pages 为静态云端版；Case 连接和回写请使用本机完整版');const base=location.protocol==='file:'?'http://127.0.0.1:8765':'';try{const r=await fetch(base+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json();if(!r.ok||!d.ok)throw new Error(d.error||'请求失败');return d;}catch(e){if(location.protocol==='file:'&&String(e.message).includes('fetch'))throw new Error('单文件的 Case 连接需要先运行学习系统服务；本地视频学习不受影响');throw e;} }
+const credentials=()=>({account:$('account').value.trim(),password:$('password').value,caseIndex:$('caseIndex').value.trim()});
+$('connectCase').onclick=async()=>{ try{$('connectCase').disabled=true; const d=await api('/api/case/check',credentials()); connectedCase=d; $('caseTitle').textContent=`case#${$('caseIndex').value} · ${d.title}`; $('caseBadge').textContent='已连接'; $('caseBadge').classList.remove('muted'); $('syncNow').disabled=false; renderCaseUrls(d.learningUrls||[]); toast(`Case 连接成功，找到 ${d.learningUrls?.length||0} 个网址`);}catch(e){connectedCase=null;$('caseUrlSelect').innerHTML='<option value="">连接失败，请检查账号和 Case 编号</option>';$('loadCaseUrl').disabled=true;$('openCaseUrl').disabled=true;$('urlHint').textContent='成功连接 Case 后，学习网址会显示在这里。';toast(e.message,true)}finally{$('connectCase').disabled=false;} };
+
+function renderCaseUrls(urls){
+  const box=$('caseUrls'), select=$('caseUrlSelect');
+  box.hidden=false;
+  if(!urls.length){select.innerHTML='<option value="">未在概述或评论中找到网址</option>';$('loadCaseUrl').disabled=true;$('openCaseUrl').disabled=true;$('urlHint').textContent='请先在 Case 概述或评论中添加 http/https 学习网址。';return;}
+  select.innerHTML=urls.map((item,i)=>`<option value="${i}">${escapeHtml(item.source)} · ${escapeHtml(item.url)}</option>`).join('');
+  $('loadCaseUrl').disabled=false;$('openCaseUrl').disabled=false;updateUrlHint();
+}
+function selectedCaseUrl(){return (connectedCase?.learningUrls||[])[Number($('caseUrlSelect').value)]||null;}
+function updateUrlHint(){const item=selectedCaseUrl();$('urlHint').textContent=item?.directVideo?'已识别为视频直链，可在播放器内跟踪。':'这是普通网页链接；可以打开原网页，但第一版无法读取网页内部播放状态。';}
+$('caseUrlSelect').addEventListener('change',updateUrlHint);
+$('loadCaseUrl').onclick=()=>{const item=selectedCaseUrl();if(!item)return;if(!item.directVideo)return toast('该地址不是已识别的视频直链，请使用“打开原网页”',true);$('videoUrl').value=item.url;loadSource(item.url,`case-url:${item.url}`);if(!$('lessonTitle').value)$('lessonTitle').value=connectedCase.title;toast('已从 Case 载入学习视频');};
+$('openCaseUrl').onclick=()=>{const item=selectedCaseUrl();if(item)window.open(item.url,'_blank','noopener,noreferrer');};
+
+function buildComment(reason){
+  const progress=Math.round(ratio()*100), title=$('lessonTitle').value.trim()||'未命名课程';
+  const lines=[`【学习系统自动记录｜${reason}】`,`1. 课程：${title}`,`2. 本次有效学习：${fmtLong(sessionSeconds)}`,`3. 累计有效学习：${fmtLong(totalSeconds)}`,`4. 视频进度：${progress}%（${fmt(video.currentTime)} / ${fmt(video.duration)}）`,`5. 记录时间：${new Date().toLocaleString('zh-CN',{hour12:false})}`];
+  if(analysis){ lines.push(`6. 已学习内容：${analysis.summary.join('；')}`); lines.push(`7. 关键词：${analysis.keywords.join('、')}`); lines.push(`8. 随堂练习：\n${analysis.quiz.map((q,i)=>`（${i+1}）${q.question}\n答案：${q.answer}`).join('\n')}`); }
+  return lines.join('\n');
+}
+async function autoSync(reason){
+  if(!connectedCase||syncBusy||totalSeconds<=lastSyncSeconds+2)return;
+  syncBusy=true; try{const d=await api('/api/case/comment',{...credentials(),content:buildComment(reason)}); lastSyncSeconds=totalSeconds;saveState();toast(`已同步到 Case${d.commentIndex?` · msg#${d.commentIndex}`:''}`);}catch(e){toast(`自动同步失败：${e.message}`,true);}finally{syncBusy=false;}
+}
+$('syncNow').onclick=()=>autoSync('手动阶段同步');
+
+$('analyze').onclick=async()=>{try{$('analyze').disabled=true;analysis=await api('/api/analyze',{text:$('transcript').value,learnedRatio:ratio()});$('emptyResult').hidden=true;$('results').hidden=false;$('summaryList').innerHTML=analysis.summary.map(x=>`<li>${escapeHtml(x)}</li>`).join('');$('keywordList').innerHTML=analysis.keywords.map(x=>`<span>${escapeHtml(x)}</span>`).join('');$('quizList').innerHTML=analysis.quiz.map((q,i)=>`<div class="quiz"><p>${i+1}. ${escapeHtml(q.question)}</p><span class="answer">答案：${escapeHtml(q.answer)}</span></div>`).join('');$('coverage').textContent=`已分析 ${analysis.coveredSentences}/${analysis.totalSentences} 段`;toast('已按当前学习进度生成');}catch(e){toast(e.message,true)}finally{$('analyze').disabled=false;}};
+function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+window.addEventListener('beforeunload',saveState);
+
+</script>
+<div class="standalone-note">单文件版 · 视频和学习记录保存在当前浏览器；Case附件请先下载后选择或拖入。</div></body>
+</html>
+
